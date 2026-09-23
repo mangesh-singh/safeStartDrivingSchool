@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TopBar } from './components/TopBar';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -16,6 +16,13 @@ import { Course } from './data/courses';
 export const App: React.FC = () => {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [selectedCourseTitle, setSelectedCourseTitle] = useState<string>('Beginner Lessons');
+
+  useEffect(() => {
+    // If no hash in URL, ensure page loads at the very top (Hero section)
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   const handleOpenEnquiry = (courseTitle?: string) => {
     if (courseTitle) {
