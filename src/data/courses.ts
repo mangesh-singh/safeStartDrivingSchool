@@ -16,8 +16,8 @@ export const coursesData: Course[] = [
     title: "Beginner Lessons",
     shortDesc: "Start from scratch and build confidence step by step with patient guidance.",
     fullDesc: "Designed for first-time drivers. Covers basic car control, clutch & gear management, steering control, parking, traffic rules, and basic road confidence.",
-    duration: "15 Days / 30 Sessions",
-    price: "₹4,500",
+    duration: "13 Days",
+    price: "₹6000",
     popular: true,
     features: [
       "Steering & pedal mastery",
@@ -34,8 +34,8 @@ export const coursesData: Course[] = [
     title: "Refresher Course",
     shortDesc: "Get back on the road with updated skills and renewed confidence.",
     fullDesc: "Perfect for licensed drivers who haven't driven in a while or feel nervous in heavy traffic. Focused on regaining control and practical city navigation.",
-    duration: "7 Days / 14 Sessions",
-    price: "₹2,800",
+    duration: "7 Days",
+    price: "₹3500",
     popular: false,
     features: [
       "Heavy traffic confidence",
@@ -52,7 +52,7 @@ export const coursesData: Course[] = [
     shortDesc: "Be fully prepared to pass your practical driving test on the first attempt.",
     fullDesc: "Intensive training matching official RTO test track requirements (H-track, 8-track, parallel park, ramp test) with mock evaluation by senior instructors.",
     duration: "5 Days Intensive",
-    price: "₹2,200",
+    price: "₹2800",
     popular: false,
     features: [
       "RTO Track simulation (H & 8 Track)",
@@ -69,7 +69,7 @@ export const coursesData: Course[] = [
     shortDesc: "Gain confidence in complex highway, expressway, and night driving conditions.",
     fullDesc: "Takes your driving to the next level. Master high-speed overtaking, lane discipline, expressway merging, night driving visibility, and emergency maneuvering.",
     duration: "3 Days Special",
-    price: "₹2,500",
+    price: "₹1500",
     popular: false,
     features: [
       "Expressway & Highway driving",
