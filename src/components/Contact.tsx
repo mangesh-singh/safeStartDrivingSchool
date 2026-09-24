@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Clock, ExternalLink, Instagram } from 'lucide-react';
 import { businessConfig } from '../config/business';
 
 interface ContactProps {
@@ -60,6 +60,25 @@ export const Contact: React.FC<ContactProps> = ({ onOpenEnquiry }) => {
                     {businessConfig.whatsappDisplay}
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">Quick responses during working hours</p>
+                </div>
+              </div>
+
+              {/* Instagram Card */}
+              <div className="flex items-start space-x-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-pink-500 transition-colors">
+                <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center shrink-0 text-pink-600">
+                  <Instagram className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold uppercase text-slate-500 tracking-wider">Follow On Instagram</h4>
+                  <a
+                    href={businessConfig.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-display font-extrabold text-slate-900 hover:text-pink-600 transition-colors flex items-center mt-0.5"
+                  >
+                    @SafeStartDrivingSchool <ExternalLink className="w-3 h-3 ml-1 text-slate-400" />
+                  </a>
+                  <p className="text-xs text-slate-500 mt-0.5">Check out latest student practice videos & updates</p>
                 </div>
               </div>
 

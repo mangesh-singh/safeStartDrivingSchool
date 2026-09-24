@@ -26,7 +26,7 @@ export const businessConfig = {
 
   social: {
     facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/invites/contact/?utm_content=x47i5kx&stkn=1p4ga87jt8mqh",
     youtube: "https://youtube.com",
   },
 
