@@ -17,6 +17,7 @@ export const businessConfig = {
   fullAddress: "Main Market Road, Near Gandhi Park, Rudrapur, Uttarakhand 263153",
   googleMapsUrl: "https://share.google/i33YqG19USTtxtgUs",
   googleReviewUrl: "https://share.google/i33YqG19USTtxtgUs",
+  googleReviewsWidgetId: "18e33448-c669-44b2-ad94-102b27ca61b6",
   
   hours: {
     weekdays: "Mon – Sat: 7:00 AM – 7:00 PM",

@@ -3,6 +3,7 @@ import { Star, MessageSquareQuote, ExternalLink } from 'lucide-react';
 import { reviewsData } from '../data/reviews';
 import { businessConfig } from '../config/business';
 import { VideoTestimonials } from './VideoTestimonials';
+import { GoogleReviewsWidget } from './GoogleReviewsWidget';
 
 export const Reviews: React.FC = () => {
   return (
@@ -66,6 +67,8 @@ export const Reviews: React.FC = () => {
             </div>
 
             <div className="space-y-4">
+              <GoogleReviewsWidget widgetId={businessConfig.googleReviewsWidgetId} />
+
               {reviewsData.map((rev) => (
                 <div
                   key={rev.id}
