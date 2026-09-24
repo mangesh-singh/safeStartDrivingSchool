@@ -6,7 +6,31 @@ export interface GalleryItem {
   caption: string;
 }
 
-export const galleryData: GalleryItem[] = [
+// Automatically glob all photo files in public/photos folder
+const photoFiles = import.meta.glob('/public/photos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', { eager: true });
+
+function formatTitle(filename: string): string {
+  const nameWithoutExt = filename.substring(0, filename.lastIndexOf('.'));
+  const words = nameWithoutExt.replace(/[-_]/g, ' ').split(' ');
+  return words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+const autoPhotos: GalleryItem[] = Object.keys(photoFiles).map((filePath, index) => {
+  const filename = filePath.split('/').pop() || `photo_${index + 1}`;
+  const title = formatTitle(filename);
+  const publicUrl = filePath.replace('/public', '');
+  const categories: Array<"Training" | "Cars" | "Students" | "Sessions"> = ["Training", "Cars", "Students", "Sessions"];
+
+  return {
+    id: `photo_${index + 1}`,
+    title: title || `Safe Start Driving Session ${index + 1}`,
+    category: categories[index % categories.length],
+    imageUrl: publicUrl,
+    caption: `Practical training session at Safe Start Driving School, Rudrapur.`
+  };
+});
+
+const fallbackPhotos: GalleryItem[] = [
   {
     id: "g1",
     title: "Safe Start Training Fleet & Vehicle",
@@ -20,33 +44,7 @@ export const galleryData: GalleryItem[] = [
     category: "Training",
     imageUrl: "/images/photo2.jpg",
     caption: "Real-world road practice with our certified instructor."
-  },
-  {
-    id: "g3",
-    title: "Proud Student License Passed",
-    category: "Students",
-    imageUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80",
-    caption: "Student receiving her driving license after clearing the RTO test on first try!"
-  },
-  {
-    id: "g4",
-    title: "Cone Parking & Steering Practice",
-    category: "Sessions",
-    imageUrl: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80",
-    caption: "Parallel parking practice on our dedicated training track."
-  },
-  {
-    id: "g5",
-    title: "Highway & Traffic Navigation",
-    category: "Sessions",
-    imageUrl: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80",
-    caption: "Real-world traffic driving lesson with full safety supervisor."
-  },
-  {
-    id: "g6",
-    title: "Happy Learner Driver",
-    category: "Students",
-    imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-    caption: "Student smiling after completing his first successful city solo drive."
   }
 ];
+
+export const galleryData: GalleryItem[] = autoPhotos.length > 0 ? autoPhotos : fallbackPhotos;

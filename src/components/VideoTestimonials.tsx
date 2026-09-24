@@ -76,13 +76,22 @@ export const VideoTestimonials: React.FC = () => {
             </div>
 
             <div className="relative aspect-video w-full bg-black">
-              <iframe
-                src={getGoogleDriveVideoPreviewUrl(activeVideo.embedUrl)}
-                title={activeVideo.title}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {activeVideo.embedUrl.endsWith('.mp4') || activeVideo.embedUrl.endsWith('.webm') || activeVideo.embedUrl.startsWith('/videos/') ? (
+                <video
+                  src={activeVideo.embedUrl}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <iframe
+                  src={getGoogleDriveVideoPreviewUrl(activeVideo.embedUrl)}
+                  title={activeVideo.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
           </div>
         </div>
