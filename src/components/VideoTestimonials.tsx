@@ -24,12 +24,22 @@ export const VideoTestimonials: React.FC = () => {
             className="group relative rounded-2xl overflow-hidden bg-slate-950 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border border-slate-800"
           >
             {/* Thumbnail */}
-            <div className="relative h-44 overflow-hidden">
-              <img
-                src={getGoogleDriveImageUrl(vid.thumbnail)}
-                alt={vid.studentName}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-90"
-              />
+            <div className="relative h-44 overflow-hidden bg-slate-900">
+              {vid.thumbnail.endsWith('.mp4') || vid.thumbnail.endsWith('.webm') || vid.thumbnail.endsWith('.mov') ? (
+                <video
+                  src={`${vid.thumbnail}#t=0.5`}
+                  preload="metadata"
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-90 pointer-events-none"
+                />
+              ) : (
+                <img
+                  src={getGoogleDriveImageUrl(vid.thumbnail)}
+                  alt={vid.studentName}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-90"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
 
               {/* Play Button Overlay */}

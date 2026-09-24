@@ -22,7 +22,7 @@ export interface VideoTestimonial {
 export const reviewsData: Review[] = [];
 
 // Automatically glob all video files in public/videos folder
-const videoFiles = import.meta.glob('/public/videos/*.{mp4,webm,MP4,WEBM}', { eager: true });
+const videoFiles = import.meta.glob('/public/videos/*.{mp4,webm,mov,MP4,WEBM,MOV}', { eager: true });
 const thumbnailFiles = import.meta.glob('/public/videos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', { eager: true });
 
 function formatTitle(filename: string): string {
@@ -37,9 +37,9 @@ const autoVideos: VideoTestimonial[] = Object.keys(videoFiles).map((filePath, id
   const title = formatTitle(filename);
   const videoUrl = filePath.replace('/public', '');
 
-  // Look for matching thumbnail image with same basename or fallback thumbnail
-  const matchingThumbKey = Object.keys(thumbnailFiles).find(k => k.includes(nameWithoutExt));
-  const thumbnailUrl = matchingThumbKey ? matchingThumbKey.replace('/public', '') : '/images/video_thumb1.jpg';
+  // Look for matching thumbnail image with same basename or use video frame #t=0.5
+  const matchingThumbKey = Object.keys(thumbnailFiles).find(k => k.toLowerCase().includes(nameWithoutExt.toLowerCase()));
+  const thumbnailUrl = matchingThumbKey ? matchingThumbKey.replace('/public', '') : videoUrl;
 
   return {
     id: `v_auto_${idx + 1}`,
