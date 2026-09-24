@@ -22,32 +22,32 @@ export interface VideoTestimonial {
 export const reviewsData: Review[] = [
   {
     id: "r1",
-    name: "Anjali S.",
-    role: "Beginner Student",
+    name: "Sunil Verma",
+    role: "Beginner Learner",
     rating: 5,
-    text: "Excellent instructor at Safe Start, very patient and professional. I was very nervous initially, but they helped me gain confidence and I passed my driving test on the first attempt in Rudrapur!",
+    text: "Safe Start Driving School in Rudrapur is top-notch! The instructor was extremely patient while teaching me clutch control and reverse parking. Cleared my RTO driving test on the first attempt!",
     course: "Beginner Driving Course",
-    date: "1 week ago",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    id: "r2",
-    name: "Rohan K.",
-    role: "Refresher Student",
-    rating: 5,
-    text: "Great learning experience and flexible timings. Highly recommend Safe Start Driving School! The instructor explained clutch control and hill starts so easily.",
-    course: "Refresher Course",
-    date: "2 weeks ago",
+    date: "3 days ago",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
+    id: "r2",
+    name: "Gurpreet Singh",
+    role: "Refresher Learner",
+    rating: 5,
+    text: "Best driving school in Rudrapur! Dual control vehicle gave me complete peace of mind during heavy traffic practice. Flexible morning timings suited my work schedule perfectly.",
+    course: "Refresher Course",
+    date: "1 week ago",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+  },
+  {
     id: "r3",
-    name: "Priya M.",
+    name: "Deepak Joshi",
     role: "Test Prep Student",
     rating: 5,
-    text: "Very supportive and friendly instructors. Helped me build real confidence on heavy traffic roads and H-track parking. 10/10 experience!",
+    text: "Highly professional instructors and friendly teaching style. They trained me well for the H-track and slope test at the local RTO. Recommended to anyone learning car driving in Rudrapur!",
     course: "Test Preparation",
-    date: "1 month ago",
+    date: "2 weeks ago",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
   }
 ];
