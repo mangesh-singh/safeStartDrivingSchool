@@ -10,17 +10,17 @@
 export function getGoogleDriveImageUrl(urlOrId: string): string {
   if (!urlOrId) return '';
   
-  // If it's already a standard http image URL (e.g., Unsplash/CDN), return as-is
+  // If it's a local path or external CDN image URL, return as-is
   if (!urlOrId.includes('drive.google.com')) {
     return urlOrId;
   }
 
-  // Extract file ID using regex
+  // Extract Google Drive file ID
   const fileIdMatch = urlOrId.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || urlOrId.match(/id=([a-zA-Z0-9_-]+)/);
   const fileId = fileIdMatch ? fileIdMatch[1] : urlOrId;
 
-  // Use Google Content CDN direct view URL
-  return `https://lh3.googleusercontent.com/d/${fileId}`;
+  // Use Google Drive official thumbnail generator endpoint (works for both images and video frames!)
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
 }
 
 export function getGoogleDriveVideoPreviewUrl(urlOrId: string): string {
