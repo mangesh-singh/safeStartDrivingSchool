@@ -15,7 +15,8 @@ export const businessConfig = {
   email: "info@safestartdrivingschool.com",
   address: "Main Market Road, Rudrapur, Uttarakhand",
   fullAddress: "Main Market Road, Near Gandhi Park, Rudrapur, Uttarakhand 263153",
-  googleMapsUrl: "https://maps.google.com/?q=Safe+Start+Driving+School+Rudrapur",
+  googleMapsUrl: "https://share.google/i33YqG19USTtxtgUs",
+  googleReviewUrl: "https://share.google/i33YqG19USTtxtgUs",
   
   hours: {
     weekdays: "Mon – Sat: 7:00 AM – 7:00 PM",
